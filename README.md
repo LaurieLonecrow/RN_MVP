@@ -1,8 +1,8 @@
 # RN_MVP
 
-# # React Native - Project
+# React Native - Project
 
-This repository was created using [npx create-expo-app].  It contains code and other attachments for our [React Native-MVP].
+This repository was created using `npx create-expo-app`.  It contains code and other attachments for our React Native-MVP.
 
 ## 📋 Requirements
 
@@ -36,6 +36,4 @@ The source for the React Native documentation and website is hosted on a separat
 
 The provided code is meant to be used for practice. 
 
-Run this project code by cloning this repo locally and running `npm install` followed by `npm start`.  If developing on an Iphone, also follow the directions above to download the expo app.  Npm start will run the local build and provide you with a QR code that will serve on your mobile and will update automagically with changes made to the code.  
-
-Please note that dependency mismatches could lead to errors here, even if the provided code itself still works and is correct.
+Run this project by cloning this repo locally and running `npm install` followed by `npm start`.  If developing on an Iphone, also follow the directions above to download the [Expo App](https://expo.dev).  `npm start` will run the local build and provide you with a QR code that will spin up the serve on your mobile device, which will update automagically with changes made to the code.  
