@@ -3,9 +3,9 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
 
 function Landing({navigation}) {
-  function navigateHandler() {
-    navigation.navigate('ProductPage')
-  }
+  // function navigateHandler() {
+  //   navigation.navigate('ProductPage')
+  // }
   return (
     <View style={globalStyles.container}>
       <StatusBar style="auto" />
@@ -14,14 +14,14 @@ function Landing({navigation}) {
       <Text>Our very first</Text>
       <Text>REACT NATIVE MVP</Text>
       </View>
-      <Pressable style={styles.button}
+      {/* <Pressable style={styles.button}
         android_ripple={{ color: '#ccc' }}
         onPress={navigateHandler}
       >
         <View style={styles.innerContainer}>
-          <Text style={styles.title}>Global Styles</Text>
+          <Text style={styles.title}>Global Colors</Text>
         </View>      
-      </Pressable> 
+      </Pressable>  */}
     </View>
   );
 }

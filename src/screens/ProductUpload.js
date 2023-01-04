@@ -1,9 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { globalStyles } from '../constants/GlobalStyles';
 
 function ProductUpload() {
   return (
-    <View style={styles.container}>
-      
+    <View style={globalStyles.container}>
+      <View style={styles.container}>
+      <Text>Product Upload</Text>
+      </View>
     </View>
   );
 }

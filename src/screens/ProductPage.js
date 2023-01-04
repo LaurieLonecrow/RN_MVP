@@ -5,6 +5,9 @@ import GlobalColorOptions from '../components/GlobalColorOptions'
 function ProductPage() {
   return (
     <View style={globalStyles.container}>
+      <View style={styles.container}>
+      <Text>Product Page</Text>
+      </View>
       <GlobalColorOptions/>
     </View>
   );

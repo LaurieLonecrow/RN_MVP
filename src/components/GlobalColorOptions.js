@@ -15,7 +15,7 @@ function renderColors(itemData){
 function GlobalColorOptions() {
   return (
     <View style={styles.container}>
-      <Text>Global Colors:</Text>
+      <Text>Global Color Options:</Text>
       <FlatList
         data={colorsArray(globalStyles.colors)}
         renderItem={renderColors}

@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { globalStyles } from '../constants/GlobalStyles';
 
 function Splash() {
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
       
     </View>
   );
