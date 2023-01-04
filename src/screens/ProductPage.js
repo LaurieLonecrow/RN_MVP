@@ -1,14 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
-import GlobalColorOptions from '../components/GlobalColorOptions'
+import ProductTile from '../components/ProductTile';
 
 function ProductPage() {
   return (
     <View style={globalStyles.container}>
-      <View style={styles.container}>
-      <Text>Product Page</Text>
-      </View>
-      <GlobalColorOptions/>
+      <ProductTile/>
     </View>
   );
 }

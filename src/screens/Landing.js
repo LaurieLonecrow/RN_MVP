@@ -4,7 +4,7 @@ import { globalStyles } from '../constants/GlobalStyles';
 
 function Landing({navigation}) {
   // function navigateHandler() {
-  //   navigation.navigate('ProductPage')
+  //   navigation.navigate('Splash')
   // }
   return (
     <View style={globalStyles.container}>

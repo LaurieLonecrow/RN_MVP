@@ -10,6 +10,7 @@ import ProductPage from './src/screens/ProductPage';
 import Messenger from './src/screens/Messenger';
 import ProductUpload from './src/screens/ProductUpload';
 import Settings from './src/screens/Settings';
+import Splash from './src/screens/Splash';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -20,7 +21,7 @@ function DrawerNavigator() {
       screenOptions={{
         headerStyle: { backgroundColor: globalStyles.container.backgroundColor },
         headerTintColor: 'black',
-        sceneContainerStyle: { backgroundColor: '#3f2f25' },
+        sceneContainerStyle: { backgroundColor: globalStyles.container.backgroundColor },
       }}
     >
       <Drawer.Screen name="Landing" component={Landing}  options={{title:'',drawerLabel: 'Home',}}/>
@@ -28,7 +29,9 @@ function DrawerNavigator() {
       <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
       <Drawer.Screen name="ProductUpload" component={ProductUpload}  options={{title:'',drawerLabel: 'Product Upload',}}/>
       <Drawer.Screen name="Settings" component={Settings}  options={{title:'',drawerLabel: 'Settings',}}/>
-      <Drawer.Screen name="ProductPage" component={ProductPage} options={{title:'Product Page',}} />
+      <Drawer.Screen name="ProductPage" component={ProductPage} options={{title:'', drawerLabel: 'Product Page',}} />
+      <Drawer.Screen name="Splash" component={Splash} options={{title:'', drawerLabel: 'Global Colors',}} />
+
     </Drawer.Navigator>
   );
 }
