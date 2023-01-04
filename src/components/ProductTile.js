@@ -1,7 +1,5 @@
 import { StyleSheet, View, Text, Image } from "react-native"
 import { FlatList } from "react-native-gesture-handler";
-import { globalStyles } from "../constants/GlobalStyles"
-
 
 const productData = [
   {
@@ -39,6 +37,18 @@ const productData = [
     price: '$20',
     location: 'Less Far Away',
     id: 6,
+  },
+  {
+    title: 'Cool Product',
+    price: '$10',
+    location: 'Far Far Away',
+    id: 7,
+  },
+  {
+    title: 'Another Cool Product',
+    price: '$20',
+    location: 'Less Far Away',
+    id: 8,
   }
 
 ];
@@ -72,8 +82,8 @@ export default ProductTile;
 const styles = StyleSheet.create({
   productItem: {
       flex: 1,
-      margin: 16,
-      height: 200,
+      margin: 4,
+      height: 250,
       borderRadius: 8,
       elevation: 4,
       backgroundColor: 'white',
