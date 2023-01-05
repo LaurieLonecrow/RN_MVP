@@ -1,10 +1,11 @@
-import Landing from './src/screens/Landing';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { globalStyles } from './src/constants/GlobalStyles';
 
+import Landing from './src/screens/Landing';
 import Authentication from './src/screens/Authentication'
 import ProductPage from './src/screens/ProductPage';
 import Messenger from './src/screens/Messenger';
@@ -24,7 +25,7 @@ function DrawerNavigator() {
         sceneContainerStyle: { backgroundColor: globalStyles.container.backgroundColor },
       }}
     >
-      <Drawer.Screen name="Landing" component={Landing}  options={{title:'',drawerLabel: 'Home',}}/>
+      <Drawer.Screen name="Landing" component={Landing}  options={{title:'Home',drawerLabel: 'Home',}}/>
       <Drawer.Screen name="Authentication" component={Authentication}  options={{title:'',drawerLabel: 'Authentication',}}/>
       <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
       <Drawer.Screen name="ProductUpload" component={ProductUpload}  options={{title:'',drawerLabel: 'Product Upload',}}/>
@@ -38,6 +39,7 @@ function DrawerNavigator() {
 export default function App() {
   return (
     <NavigationContainer style={globalStyles.container}>
+      <StatusBar style="auto" />
       <Stack.Navigator>
         <Stack.Screen
             name="Drawer"

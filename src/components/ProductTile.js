@@ -6,12 +6,11 @@ import getProducts from "../api/productsApi";
 function renderProductData(itemData) {
   return (
     <View style={styles.productItem}>
-      <View style={styles.innerContainer}> 
-        <Image style={styles.image} source={{uri:itemData.item.images[0]}} />
-        <Text style={styles.title}>{itemData.item.title}</Text>
-        <Text>${itemData.item.price}.00</Text>
-        <Text>{itemData.item.description}</Text>
-      </View>
+      <Image style={styles.image} source={{uri:itemData.item.images[1]}} />
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>{itemData.item.title}</Text>
+          <Text>${itemData.item.price}.00</Text>
+        </View>
     </View>
 
   )
@@ -49,7 +48,9 @@ const styles = StyleSheet.create({
   productItem: {
     flex: 1,
     margin: 4,
-    height: 250,
+    padding: 16,
+    height: 220,
+    alignItems: 'center',
     borderRadius: 8,
     elevation: 4,
     backgroundColor: 'white',
@@ -60,20 +61,20 @@ const styles = StyleSheet.create({
     overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
   },
   image: {
-    borderRadius: 50,
-    width: 100,
-    height: 100,
+    borderRadius: 80,
+    width: 125,
+    height: 125,
   },
-  innerContainer: {
+  textContainer: {
     flex: 1,
-    padding: 16,
     borderRadius: 8,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
   title: {
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 14,
+    textAlign: 'center',
   },
 });
 
