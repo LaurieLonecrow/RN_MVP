@@ -3,57 +3,6 @@ import { StyleSheet, View, Text, Image } from "react-native"
 import { FlatList } from "react-native-gesture-handler";
 import getProducts from "../api/productsApi";
 
-const productDataArray = [
-  {
-    title: 'Cool Product',
-    price: '$10',
-    location: 'Far Far Away',
-    id: 1,
-  },
-  {
-    title: 'Another Cool Product',
-    price: '$20',
-    location: 'Less Far Away',
-    id: 2,
-  },
-  {
-    title: 'Cool Product',
-    price: '$10',
-    location: 'Far Far Away',
-    id: 3,
-  },
-  {
-    title: 'Another Cool Product',
-    price: '$20',
-    location: 'Less Far Away',
-    id: 4,
-  },
-  {
-    title: 'Cool Product',
-    price: '$10',
-    location: 'Far Far Away',
-    id: 5,
-  },
-  {
-    title: 'Another Cool Product',
-    price: '$20',
-    location: 'Less Far Away',
-    id: 6,
-  },
-  {
-    title: 'Cool Product',
-    price: '$10',
-    location: 'Far Far Away',
-    id: 7,
-  },
-  {
-    title: 'Another Cool Product',
-    price: '$20',
-    location: 'Less Far Away',
-    id: 8,
-  }
-  
-];
 function renderProductData(itemData) {
   return (
     <View style={styles.productItem}>
@@ -61,7 +10,7 @@ function renderProductData(itemData) {
         <Image style={styles.image} source={{uri:itemData.item.images[0]}} />
         <Text style={styles.title}>{itemData.item.title}</Text>
         <Text>${itemData.item.price}.00</Text>
-        {/* <Text>{itemData.item.description}</Text> */}
+        <Text>{itemData.item.description}</Text>
       </View>
     </View>
 
