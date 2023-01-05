@@ -1,7 +1,9 @@
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, Image } from "react-native"
 import { FlatList } from "react-native-gesture-handler";
+import getProducts from "../api/productsApi";
 
-const productData = [
+const productDataArray = [
   {
     title: 'Cool Product',
     price: '$10',
@@ -50,49 +52,64 @@ const productData = [
     location: 'Less Far Away',
     id: 8,
   }
-
+  
 ];
-
 function renderProductData(itemData) {
   return (
     <View style={styles.productItem}>
       <View style={styles.innerContainer}> 
-        <Image style={styles.image} source={{ uri: 'https://reactjs.org/logo-og.png' }} />
+        <Image style={styles.image} source={{uri:itemData.item.images[0]}} />
         <Text style={styles.title}>{itemData.item.title}</Text>
-        <Text>{itemData.item.price}</Text>
-        <Text>{itemData.item.location}</Text>
+        <Text>${itemData.item.price}.00</Text>
+        {/* <Text>{itemData.item.description}</Text> */}
       </View>
     </View>
 
   )
-}
+};
+
 function ProductTile() {
+  const [ productsData, setProductsData ] = useState([])
+  const [loading, setLoading] = useState(true);
+
+  const fetchProductsData = async () => {
+    const data = await getProducts();
+    setProductsData(data);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchProductsData();
+  }, []);
+
   return (
+    <>
+      {productsData && ( 
         <FlatList 
-        data={productData}
+        data={productsData}
         renderItem={renderProductData}
         keyExtractor={(item)=>item.id}
         numColumns={2}
         />
+      )}
+    </>
   )
-}
-
-export default ProductTile;
+};
 
 const styles = StyleSheet.create({
   productItem: {
-      flex: 1,
-      margin: 4,
-      height: 250,
-      borderRadius: 8,
-      elevation: 4,
-      backgroundColor: 'white',
-      shadowColor: 'black',
-      shadowOpacity: 0.25,
-      shadowOffset: { width: 0, height: 2 },
-      shadowRadius: 8,
-      overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
-    },
+    flex: 1,
+    margin: 4,
+    height: 250,
+    borderRadius: 8,
+    elevation: 4,
+    backgroundColor: 'white',
+    shadowColor: 'black',
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
+    overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
+  },
   image: {
     borderRadius: 50,
     width: 100,
@@ -109,4 +126,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
   },
-})
+});
+
+export default ProductTile;
