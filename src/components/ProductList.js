@@ -3,6 +3,8 @@ import { StyleSheet, View, Text, Image } from "react-native"
 import { FlatList } from "react-native-gesture-handler";
 import getProducts from "../api/productsApi";
 
+import LoadingOverlay from "./LoadingOverlay";
+
 function renderProductData(itemData) {
   return (
     <View style={styles.productItem}>
@@ -31,7 +33,8 @@ function ProductList() {
   }, []);
 
   return (
-    <>
+    <> 
+      {loading && <LoadingOverlay message="Loading your products..." /> }
       {productsData && ( 
         <FlatList 
         data={productsData}
