@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
-import ProductTile from '../components/ProductTile';
+import ProductList from '../components/ProductList';
 
 function Landing({navigation}) {
   return (
     <View style={globalStyles.container}>
-      <ProductTile/>
+      <ProductList/>
     </View>
   );
 }
