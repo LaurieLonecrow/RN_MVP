@@ -12,6 +12,7 @@ import Messenger from './src/screens/Messenger';
 import ProductUpload from './src/screens/ProductUpload';
 import Settings from './src/screens/Settings';
 import Splash from './src/screens/Splash';
+import Login from './src/screens/Login';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -32,6 +33,8 @@ function DrawerNavigator() {
       <Drawer.Screen name="Settings" component={Settings}  options={{title:'',drawerLabel: 'Settings',}}/>
       <Drawer.Screen name="ProductPage" component={ProductPage} options={{title:'', drawerLabel: 'Product Page',}} />
       <Drawer.Screen name="Splash" component={Splash} options={{title:'', drawerLabel: 'Global Colors',}} />
+      <Drawer.Screen name="Login" component={Login} options={{title:'', drawerLabel: 'Login',}} />
+
 
     </Drawer.Navigator>
   );
