@@ -1,20 +1,21 @@
 import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
 
+import SignInButton from '../components/SignInButton';
+
 function Authentication() {
   return (
     <View style={globalStyles.container}>
       <View style={styles.container}>
       <Text style={styles.header}>Start your journey</Text>
       <Text style={styles.subHeader}>Create your new Account to subscribe to news, fresh realeases, and more...</Text>
-      <Pressable
-        style={styles.button}
-        onPress={() => console.log('Button pressed')}>
-          <View style={styles.button}>
-          <Text style={styles.buttonText}>Sign in</Text>
+        <View style={styles.buttonContainer}>
+        <SignInButton text='Sign in with Apple' onPress={()=>console.log('Pressed Apple')} backgroundColor={globalStyles.colors.primary400} icon="ios-lock-closed-outline" color='white'/>
+        <SignInButton text='Sign in with Facebook' onPress={()=>console.log('Pressed Facebook')} backgroundColor={globalStyles.colors.primary500} icon="logo-facebook" color='white'/>
+        <SignInButton text='Sign in with Twitter' onPress={()=>console.log('Pressed Twitter')} backgroundColor={globalStyles.colors.primary200} icon="logo-twitter" color='white'/>
+        <SignInButton text='Sign in or register with Email' onPress={()=>console.log('Pressed Email')} color={globalStyles.colors.primary500}/>
         </View>
-        </Pressable>
-      </View>
+    </View>
     </View>
   );
 }
@@ -35,20 +36,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginBottom: 24,
   },
-  button: {
-    width: "80%",
-    borderRadius: 25,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    color: 'white',
-    backgroundColor: globalStyles.colors.primary400,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
+  buttonContainer: {
+    width: '100%',
+    justifyContent: 'center',
   }
-
 });
 
 export default Authentication;
