@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, View, Text } from "react-native";
 import { Ionicons } from '@expo/vector-icons'; 
 
-function SignInButton({onPress, text, backgroundColor, icon, color}) {
+function Button({onPress, text, backgroundColor, icon, color}) {
 
   return (
     <View>
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignInButton
+export default Button

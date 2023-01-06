@@ -1,7 +1,7 @@
 import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
 
-import SignInButton from '../components/SignInButton';
+import SignInButton from '../components/Button';
 
 function Authentication() {
   return (
