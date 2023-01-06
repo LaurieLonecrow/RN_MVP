@@ -1,12 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
-import ProductList from '../components/ProductList';
+import AuthContent from '../components/AuthContent';
 
 function Landing({navigation}) {
   return (
     <View style={globalStyles.container}>
-      <ProductList/>
+    <AuthContent/>
     </View>
   );
 }
