@@ -19,7 +19,7 @@ function renderProductData(itemData) {
 };
 
 function ProductList() {
-  const [ productsData, setProductsData ] = useState([])
+  const [productsData, setProductsData] = useState([])
   const [loading, setLoading] = useState(true);
 
   const fetchProductsData = async () => {

@@ -1,9 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
+import { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { globalStyles } from './src/constants/GlobalStyles';
+import AuthContextProvider, { AuthContext } from './src/store/authContext';
+import Button from './src/components/Button';
 
 import Landing from './src/screens/Landing';
 import Authentication from './src/screens/Authentication'
@@ -13,6 +16,7 @@ import ProductUpload from './src/screens/ProductUpload';
 import Settings from './src/screens/Settings';
 import Splash from './src/screens/Splash';
 import Login from './src/screens/Login';
+import SignUp from './src/screens/SignUp';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -26,33 +30,58 @@ function DrawerNavigator() {
         sceneContainerStyle: { backgroundColor: globalStyles.container.backgroundColor },
       }}
     >
+      <Drawer.Screen name="Splash" component={Splash} options={{title:'', drawerLabel: 'Global Colors',}} />
       <Drawer.Screen name="Landing" component={Landing}  options={{title:'Home',drawerLabel: 'Home',}}/>
-      <Drawer.Screen name="Authentication" component={Authentication}  options={{title:'',drawerLabel: 'Authentication',}}/>
+      <Drawer.Screen name="ProductPage" component={ProductPage} options={{title:'', drawerLabel: 'Product Page',}} />
       <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
       <Drawer.Screen name="ProductUpload" component={ProductUpload}  options={{title:'',drawerLabel: 'Product Upload',}}/>
       <Drawer.Screen name="Settings" component={Settings}  options={{title:'',drawerLabel: 'Settings',}}/>
-      <Drawer.Screen name="ProductPage" component={ProductPage} options={{title:'', drawerLabel: 'Product Page',}} />
-      <Drawer.Screen name="Splash" component={Splash} options={{title:'', drawerLabel: 'Global Colors',}} />
-      <Drawer.Screen name="Login" component={Login} options={{title:'', drawerLabel: 'Login',}} />
-
-
     </Drawer.Navigator>
   );
 }
+
+function AuthStack() {
+  return ( 
+    <Stack.Navigator>
+      <Stack.Screen name="Authentication" component={Authentication} options={{title:''}}/>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="SignUp" component={SignUp} />
+    </Stack.Navigator>
+  );
+}
+
+function AuthenticatedStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Drawer"
+        component={DrawerNavigator}
+        options={{
+          headerShown: false,
+        }}
+        />
+      <Stack.Screen name="ProductPage" component={ProductPage} />
+    </Stack.Navigator>
+
+  );
+}
+
+function Navigation() {
+  const authCtx = useContext(AuthContext);
+  return ( 
+      <NavigationContainer style={globalStyles.container}>
+      {!authCtx.isAuthenticated && <AuthStack />}
+      {authCtx.isAuthenticated && <AuthenticatedStack />}
+      </NavigationContainer>
+      )
+}
+
 export default function App() {
   return (
-    <NavigationContainer style={globalStyles.container}>
+    <AuthContextProvider>
       <StatusBar style="auto" />
-      <Stack.Navigator>
-        <Stack.Screen
-            name="Drawer"
-            component={DrawerNavigator}
-            options={{
-              headerShown: false,
-            }}
-          />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <Navigation/>
+    </AuthContextProvider>
   );
 }
 

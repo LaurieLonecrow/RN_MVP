@@ -3,7 +3,7 @@ import { globalStyles } from '../constants/GlobalStyles';
 
 import SignInButton from '../components/Button';
 
-function Authentication() {
+function Authentication({navigation}) {
   return (
     <View style={globalStyles.container}>
       <View style={styles.container}>
@@ -13,7 +13,7 @@ function Authentication() {
         <SignInButton text='Sign in with Apple' onPress={()=>console.log('Pressed Apple')} backgroundColor={globalStyles.colors.primary400} icon="ios-lock-closed-outline" color='white'/>
         <SignInButton text='Sign in with Facebook' onPress={()=>console.log('Pressed Facebook')} backgroundColor={globalStyles.colors.primary500} icon="logo-facebook" color='white'/>
         <SignInButton text='Sign in with Twitter' onPress={()=>console.log('Pressed Twitter')} backgroundColor={globalStyles.colors.primary200} icon="logo-twitter" color='white'/>
-        <SignInButton text='Sign in or register with Email' onPress={()=>console.log('Pressed Email')} color={globalStyles.colors.primary500}/>
+        <SignInButton text='Sign in or register with Email' onPress={()=>navigation.navigate('Login')} color={globalStyles.colors.primary500}/>
         </View>
     </View>
     </View>
