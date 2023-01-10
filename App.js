@@ -46,11 +46,10 @@ function DrawerNavigator() {
       }}
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
-      <Drawer.Screen name="Landing" component={Landing}  options={{title:'Home',drawerLabel: 'Home',}}/>
       <Drawer.Screen name="ProductListPage" component={ProductListPage} options={{title:'', drawerLabel: 'Products',}} />
-      <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
       <Drawer.Screen name="ProductUpload" component={ProductUpload}  options={{title:'',drawerLabel: 'Product Upload',}}/>
       <Drawer.Screen name="Settings" component={Settings}  options={{title:'',drawerLabel: 'Settings',}}/>
+      <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
       <Drawer.Screen name="Splash" component={Splash} options={{title:'', drawerLabel: 'Global Colors',}} />
     </Drawer.Navigator>
   );
@@ -76,8 +75,8 @@ function AuthenticatedStack() {
             headerShown: false,
         }}
         />
-      <Stack.Screen name="ProductListPage" component={ProductListPage} />
-      <Stack.Screen name="ProductPage" component={ProductPage} />
+      <Stack.Screen name="ProductListPage" component={ProductListPage} options={{title:''}}/>
+      <Stack.Screen name="ProductPage" component={ProductPage} options={{title:''}}/>
 
     </Stack.Navigator>
 
