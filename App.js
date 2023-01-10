@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import { globalStyles } from './src/constants/GlobalStyles';
 import AuthContextProvider, { AuthContext } from './src/store/authContext';
 import Button from './src/components/Button';
@@ -22,6 +22,20 @@ const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 function DrawerNavigator() {
+  const authCtx = useContext(AuthContext);
+
+  function CustomDrawerContent(props) {
+    return (
+      <DrawerContentScrollView {...props}>
+        <DrawerItemList {...props} />
+        <DrawerItem
+          label="LogOut"
+          onPress={authCtx.logout}
+        />
+      </DrawerContentScrollView>
+    );
+  }
+  
   return (
     <Drawer.Navigator
       screenOptions={{
@@ -29,13 +43,14 @@ function DrawerNavigator() {
         headerTintColor: 'black',
         sceneContainerStyle: { backgroundColor: globalStyles.container.backgroundColor },
       }}
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
-      <Drawer.Screen name="Splash" component={Splash} options={{title:'', drawerLabel: 'Global Colors',}} />
       <Drawer.Screen name="Landing" component={Landing}  options={{title:'Home',drawerLabel: 'Home',}}/>
       <Drawer.Screen name="ProductPage" component={ProductPage} options={{title:'', drawerLabel: 'Product Page',}} />
       <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
       <Drawer.Screen name="ProductUpload" component={ProductUpload}  options={{title:'',drawerLabel: 'Product Upload',}}/>
       <Drawer.Screen name="Settings" component={Settings}  options={{title:'',drawerLabel: 'Settings',}}/>
+      <Drawer.Screen name="Splash" component={Splash} options={{title:'', drawerLabel: 'Global Colors',}} />
     </Drawer.Navigator>
   );
 }
@@ -56,8 +71,8 @@ function AuthenticatedStack() {
       <Stack.Screen
         name="Drawer"
         component={DrawerNavigator}
-        options={{
-          headerShown: false,
+        options={{  
+            headerShown: false,
         }}
         />
       <Stack.Screen name="ProductPage" component={ProductPage} />
