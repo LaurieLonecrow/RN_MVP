@@ -18,7 +18,7 @@ function AuthContent({ isLogin, onAuthenticate }) {
 
   function switchAuthModeHandler() {
     if (isLogin) {
-      navigation.replace('Signup');
+      navigation.replace('SignUp');
     } else {
       navigation.replace('Login');
     }
@@ -60,9 +60,9 @@ function AuthContent({ isLogin, onAuthenticate }) {
         credentialsInvalid={credentialsInvalid}
       />
       <View style={styles.buttons}>
-        <Button onPress={switchAuthModeHandler}>
-          {isLogin ? text='Create a new user' : text='Log in instead'}
-        </Button>
+      {isLogin ?
+        <Button onPress={switchAuthModeHandler} color='white' text='Create a new user'/>
+        : <Button onPress={switchAuthModeHandler} color='white'text='Log in instead'/>}
       </View>
     </View>
   );
