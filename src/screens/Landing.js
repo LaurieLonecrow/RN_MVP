@@ -1,11 +1,11 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
-import AuthContent from '../components/AuthContent';
+import ProductList from '../components/ProductListTile';
 
 function Landing({navigation}) {
   return (
     <View style={globalStyles.container}>
-    <AuthContent/>
+      <ProductList/>
     </View>
   );
 }

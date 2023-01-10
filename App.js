@@ -10,6 +10,7 @@ import Button from './src/components/Button';
 
 import Landing from './src/screens/Landing';
 import Authentication from './src/screens/Authentication'
+import ProductListPage from './src/screens/ProductListPage';
 import ProductPage from './src/screens/ProductPage';
 import Messenger from './src/screens/Messenger';
 import ProductUpload from './src/screens/ProductUpload';
@@ -46,7 +47,7 @@ function DrawerNavigator() {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen name="Landing" component={Landing}  options={{title:'Home',drawerLabel: 'Home',}}/>
-      <Drawer.Screen name="ProductPage" component={ProductPage} options={{title:'', drawerLabel: 'Product Page',}} />
+      <Drawer.Screen name="ProductListPage" component={ProductListPage} options={{title:'', drawerLabel: 'Products',}} />
       <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
       <Drawer.Screen name="ProductUpload" component={ProductUpload}  options={{title:'',drawerLabel: 'Product Upload',}}/>
       <Drawer.Screen name="Settings" component={Settings}  options={{title:'',drawerLabel: 'Settings',}}/>
@@ -75,7 +76,9 @@ function AuthenticatedStack() {
             headerShown: false,
         }}
         />
+      <Stack.Screen name="ProductListPage" component={ProductListPage} />
       <Stack.Screen name="ProductPage" component={ProductPage} />
+
     </Stack.Navigator>
 
   );
