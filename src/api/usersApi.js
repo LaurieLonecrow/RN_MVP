@@ -7,7 +7,7 @@ export async function login(email, password) {
   body: JSON.stringify({
     email: email,
     password: password,
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
   })
 })
 .then(res => res.json())
