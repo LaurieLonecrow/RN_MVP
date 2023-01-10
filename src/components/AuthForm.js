@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { globalStyles } from '../constants/GlobalStyles';
 
 import Button from './Button';
 import Input from './AuthInput';
@@ -95,6 +96,9 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
 const styles = StyleSheet.create({
   buttons: {
     marginTop: 12,
+    backgroundColor: globalStyles.colors.primary100,
+    borderRadius: 8,
+
   },
 });
 

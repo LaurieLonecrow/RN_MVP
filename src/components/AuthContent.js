@@ -85,5 +85,7 @@ const styles = StyleSheet.create({
   },
   buttons: {
     marginTop: 8,
+    backgroundColor: globalStyles.colors.primary400,
+    borderRadius: 8,
   },
 });
