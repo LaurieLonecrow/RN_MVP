@@ -1,5 +1,5 @@
 const getProducts = () => {
-  const getAllProducts = fetch('https://dummyjson.com/products?limit=30&skip=10&select=title,price,images,description')
+  const getAllProducts = fetch('https://dummyjson.com/products?limit=30')
   .then(res => res.json())
   .then(data => {
     return data.products;

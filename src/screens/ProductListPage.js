@@ -3,17 +3,26 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
 import ProductListTile from '../components/ProductListTile';
 import LoadingOverlay from "../components/LoadingOverlay";
+
 import getProducts from "../api/productsApi";
 
 function ProductListPage({navigation}) {
-  const [productsData, setProductsData] = useState([])
   const [loading, setLoading] = useState(true);
+  const [productsData, setProductsData] = useState([])
 
-  function pressHandler() {
-    navigation.navigate('ProductPage')
-  }
+  const fetchProductsData = async () => {
+    const data = await getProducts();
+    setProductsData(data);
+    setLoading(false);
+  };
 
+  
   function renderProductData(itemData) {
+    function pressHandler() {
+      navigation.navigate('ProductPage', {
+        product: itemData.item,
+      })
+    }
     return (
       <ProductListTile 
       source={{uri:itemData.item.images[1]}}
@@ -22,12 +31,6 @@ function ProductListPage({navigation}) {
       onPress={pressHandler}
       />
     )
-  };
-
-  const fetchProductsData = async () => {
-    const data = await getProducts();
-    setProductsData(data);
-    setLoading(false);
   };
 
   useEffect(() => {
