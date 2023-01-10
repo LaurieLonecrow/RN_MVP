@@ -8,7 +8,8 @@ This repository was created using `npx create-expo-app`.  It contains code and o
 
 Run this project by cloning this repo locally and running `npm install` followed by `npm start`.  If developing on an Iphone, also follow these directions to download the [Expo App](https://expo.dev).  `npm start` will run the local build and provide you with a QR code that will spin up the serve on your mobile device, which will update automagically with changes made to the code.  
 
-The initial screen will give you various options to Signin, but for demo purposes use `Sign In with Email` = email address: `test@test.com` / password: `password`
+The initial screen will give you various options to Signin, but for demo purposes use `Sign In with Email`.
+  email address: `test@test.com` / password: `password`
 
 ## 📋 Requirements
 
