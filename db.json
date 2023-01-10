@@ -3,14 +3,12 @@
     {
       "id": 1,
       "email": "test@test.com",
-      "password": "password",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+      "password": "password"
     },
     {
       "id": 2,
       "email": "test1@test.com",
-      "password": "password1",
-      "token": "1NiIsInR5cCI6IkpXVCJ9eyJhbGciOiJIUzI"
+      "password": "password1"
     }
   ]
 }
