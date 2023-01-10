@@ -6,18 +6,16 @@ function ProductListTile({source, title, price, onPress}) {
     <Pressable
     android_ripple={{ color: '#ccc' }}
     style={({ pressed }) => [
-      styles.button,
+      styles.productItem,
       pressed ? styles.buttonPressed : null,
     ]}
     onPress={onPress}
     >
-      <View style={styles.productItem}>
         <Image style={styles.image} source={source} />
           <View style={styles.textContainer}>
             <Text style={styles.title}>{title}</Text>
             <Text>${price}.00</Text>
           </View>
-      </View>
     </Pressable>
   )
 };

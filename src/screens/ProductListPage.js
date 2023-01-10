@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
 import ProductListTile from '../components/ProductListTile';
