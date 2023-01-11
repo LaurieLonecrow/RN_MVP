@@ -39,9 +39,11 @@ const [cameraPermissionInformation, requestPermission] =
       aspect: [16, 9],
       quality: 0.5,
     });
-    if (image) {
-      setRollImage(image.assets[0].uri);
-    }
+    
+      if (!image.canceled) {
+        setRollImage(image.assets[0].uri);
+      }
+    
   };
 
   async function getCameraImage(){
@@ -54,9 +56,11 @@ const [cameraPermissionInformation, requestPermission] =
       aspect: [16, 9],
       quality: 0.5,
     });
-    if (image) {
-      setCameraImage(image.assets[0].uri);
-    }
+    
+      if (!image.canceled) {
+        setCameraImage(image.assets[0].uri);
+      } 
+    
   };
 
   let imagePreview = <Text>No image taken yet.</Text>;
@@ -70,8 +74,8 @@ const [cameraPermissionInformation, requestPermission] =
   return (
     <View>
       <View style={styles.imagePreview}>{imagePreview}</View>
-        <Button text="Take a pic" onPress={getCameraImage} color="black"/>
-        <Button text="Choose a pic" onPress={getRollImage} color="black"/>
+        <Button text="Take a Picture" onPress={getCameraImage} backgroundColor={globalStyles.colors.primary500} color={'white'}/>
+        <Button text="Choose from Camera Roll" onPress={getRollImage} backgroundColor={globalStyles.colors.primary800} color={'white'}/>
     </View>
   );
 }
@@ -90,7 +94,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   image: {
-    width: 200,
-    height: 200,
+    width: '100%',
+    height: '100%',
   },
 });

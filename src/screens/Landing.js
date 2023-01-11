@@ -5,9 +5,7 @@ import { globalStyles } from '../constants/GlobalStyles';
 function Landing({navigation}) {
   return (
     <View style={globalStyles.container}>
-     <View style={styles.container}>
       <ImagePicker />
-      </View>
     </View>
   );
 }
