@@ -9,7 +9,7 @@ function Messenger() {
         <View style={styles.messageContainer}>
         </View>
           <KeyboardAvoidingView 
-            behavior="height"
+            behavior="position"
             style={styles.inputContainer}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
               <View style={styles.textInputContainer}>
@@ -43,11 +43,9 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flex: 1,
-    flexDirection: 'row',
     width: '100%',
     paddingVertical: 15,
     paddingHorizontal: 40,
-    justifyContent: 'center',
   },
   textInputContainer: {
     flex: 1,
@@ -57,6 +55,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     borderWidth: 2,
+    backgroundColor: 'white',
     borderColor: globalStyles.colors.primary100,
     borderRadius: 24,
     fontSize: 16,
