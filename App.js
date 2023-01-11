@@ -1,11 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import { useContext } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import { globalStyles } from './src/constants/GlobalStyles';
 import AuthContextProvider, { AuthContext } from './src/store/authContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as SplashScreen from 'expo-splash-screen';
+
 import Button from './src/components/Button';
 
 import Landing from './src/screens/Landing';
@@ -50,7 +53,7 @@ function DrawerNavigator() {
       <Drawer.Screen name="ProductUpload" component={ProductUpload}  options={{title:'',drawerLabel: 'Product Upload',}}/>
       <Drawer.Screen name="Settings" component={Settings}  options={{title:'',drawerLabel: 'Settings',}}/>
       <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
-      <Drawer.Screen name="Splash" component={Splash} options={{title:'', drawerLabel: 'Global Colors',}} />
+      <Drawer.Screen name="Landing" component={Landing} options={{title:'', drawerLabel: 'Landing',}} />
     </Drawer.Navigator>
   );
 }
@@ -77,30 +80,57 @@ function AuthenticatedStack() {
         />
       <Stack.Screen name="ProductListPage" component={ProductListPage} options={{title:''}}/>
       <Stack.Screen name="ProductPage" component={ProductPage} options={{title:''}}/>
-
     </Stack.Navigator>
-
   );
 }
 
-function Navigation() {
+function Navigation({onReady}) {
   const authCtx = useContext(AuthContext);
+  
   return ( 
-      <NavigationContainer style={globalStyles.container}>
-      {!authCtx.isAuthenticated && <AuthStack />}
-      {authCtx.isAuthenticated && <AuthenticatedStack />}
-      </NavigationContainer>
-      )
+    <NavigationContainer 
+    style={globalStyles.container}
+    onReady={onReady}>
+    {!authCtx.isAuthenticated && <AuthStack />}
+    {authCtx.isAuthenticated && <AuthenticatedStack />}
+    </NavigationContainer>
+    );
 }
+
+function Root() {
+  const [appIsLoading, setAppIsLoading]=useState(true)
+
+  const authCtx = useContext(AuthContext);
+  useEffect(()=> {
+    async function fetchToken() {
+      const storedToken = await AsyncStorage.getItem('token');
+    
+      if (storedToken) {
+        authCtx.authenticate(storedToken)
+      }
+      setAppIsLoading(false)
+    }
+    fetchToken();
+  }, [])
+
+    if(!appIsLoading) {
+      SplashScreen.hideAsync();
+    }
+
+  return <Navigation/>
+};
+
+SplashScreen.preventAutoHideAsync(); 
+// called in globalScope to make sure it runs
 
 export default function App() {
   return (
     <AuthContextProvider>
       <StatusBar style="auto" />
-      <Navigation/>
+      <Root/>
     </AuthContextProvider>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
