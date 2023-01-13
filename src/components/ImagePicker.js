@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: globalStyles.colors.primary100,
     borderRadius: 4,
     overflow: 'hidden',
   },

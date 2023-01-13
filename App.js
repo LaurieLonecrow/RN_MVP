@@ -51,7 +51,7 @@ function DrawerNavigator() {
     >
       <Drawer.Screen name="ProductListPage" component={ProductListPage} options={{title:'', drawerLabel: 'Products',}} />
       <Drawer.Screen name="ProductUpload" component={ProductUpload}  options={{title:'',drawerLabel: 'Product Upload',}}/>
-      <Drawer.Screen name="Settings" component={Settings}  options={{title:'',drawerLabel: 'Settings',}}/>
+      <Drawer.Screen name="Map" component={Settings}  options={{title:'',drawerLabel: 'Map',}}/>
       <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
       <Drawer.Screen name="Landing" component={Landing} options={{title:'', drawerLabel: 'Camera',}} />
     </Drawer.Navigator>

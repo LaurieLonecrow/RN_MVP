@@ -1,12 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
+import Map from '../components/Map';
 
 function Settings() {
   return (
     <View style={globalStyles.container}>
-      <View style={styles.container}>
-      <Text>Settings</Text>
-      </View>
+        <Map/>
     </View>
   );
 }
@@ -14,9 +13,6 @@ function Settings() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 

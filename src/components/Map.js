@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import MapView, { Marker } from 'react-native-maps';
+import LoadingOverlay from './LoadingOverlay';
 
 function Map() {
   const [location, setLocation] = useState(null);
@@ -21,7 +22,7 @@ function Map() {
       })();
     }, [location]);
 
-    let locationPreview = <Text style={styles.waitingText}>Finding your current location...</Text>
+    let locationPreview = <LoadingOverlay message={"Finding your current location..."}/>
     if (location) {
       const region = {
         latitude: location.lat, 
