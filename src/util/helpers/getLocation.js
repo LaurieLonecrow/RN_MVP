@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import { useEffect, useState } from 'react';
 
-export async function getCurrentLocation() {
+export const getCurrentLocation =() => {
   const [location, setLocation] = useState(null);
 
     useEffect(() => {
@@ -20,5 +20,5 @@ export async function getCurrentLocation() {
       })();
     }, [location]);
 
-    return location;
+    return { location };
 }
