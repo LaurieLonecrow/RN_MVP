@@ -7,40 +7,23 @@ function ProductPage({route}) {
   const [productImages, setProductImages] = useState([])
 
   const selectedProduct = route.params.product;
-
+console.log(selectedProduct)
   function presshandler() {
     console.log('pressed');
   }
   
-  function renderImageItems(itemData) {
-    return (
-      <View style={styles.imageContainer}>
-        <Image style={styles.image} source={{uri:itemData.item}} />
-      </View>
-      )
-  }
-
-  function getProductImages() {
-      setProductImages(selectedProduct.images)
-  } 
-    
-  useEffect(()=>{
-    getProductImages();
-  })
 
   return (<>
-  
+
     <View style={globalStyles.container}>
-      <FlatList 
-      horizontal={true}
-      data={productImages}
-      renderItem={renderImageItems}
-      />
       <ScrollView>
+      <View style={styles.imageContainer}>
+        <Image style={styles.image} source={{uri:selectedProduct.image_url}} />
+      </View>
         <View style={styles.container}>
-          <Text style={styles.title}>{selectedProduct.title}</Text>
-          <Text style={styles.subTitle}>{selectedProduct.description}</Text>
-          <Text style={styles.price}>${selectedProduct.price}.00</Text>
+          <Text style={styles.title}>{selectedProduct.name}</Text>
+          <Text style={styles.subTitle}>{selectedProduct.location.address1}</Text>
+          <Text style={styles.price}>{selectedProduct.rating}</Text>
         </View>
         <Button onPress={presshandler} text={'Add to Favorites'} backgroundColor={'blue'} color={'white'}/>
         <Button onPress={presshandler} text={'Purchase'} backgroundColor={'lightblue'} color={'black'}/>
@@ -53,17 +36,15 @@ function ProductPage({route}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 20,
     alignItems: 'center',
     justifyContent: 'center',
   },
   image: {
-    width: 250,
+    width: '100%',
     height: 250,
   },
   imageContainer:{
     flex: 1,
-    marginLeft: 15,
     justifyContent: 'center',
   },
   title: {
@@ -74,7 +55,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   subTitle: {
-    fontSize: 14,
+    fontSize: 20,
     margin: 8,
     textAlign: 'left',
     color: 'black',

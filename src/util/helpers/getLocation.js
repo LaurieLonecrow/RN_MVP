@@ -1,24 +1,15 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import { useEffect, useState } from 'react';
+import { Alert } from 'react-native';
 
-export const getCurrentLocation =() => {
-  const [location, setLocation] = useState(null);
 
-    useEffect(() => {
-      (async () => {
-        let { status } = await requestForegroundPermissionsAsync();
-        if (status !== 'granted') {
-          setErrorMsg('Permission to access location was denied');
-          return;
-        }
-        let location = await getCurrentPositionAsync({});
-        setLocation({
-          lat: location.coords.latitude,
-          lng: location.coords.longitude
-        });
-      })();
-    }, [location]);
-
-    return { location };
+export const getCurrentLocation = async() => {
+  let { status } = await requestForegroundPermissionsAsync();
+  if (status !== 'granted') {
+    Alert.alert('Permission to access location was denied');
+    return;
+  }
+  const location = await getCurrentPositionAsync({});
+  return location;
 }

@@ -13,8 +13,8 @@ import Button from './src/components/Button';
 
 import Landing from './src/screens/Landing';
 import Authentication from './src/screens/Authentication'
-import ProductListPage from './src/screens/ProductListPage';
-import ProductPage from './src/screens/ProductPage';
+import RestaurantListPage from './src/screens/RestaurantListPage';
+import RestaurantPage from './src/screens/RestaurantPage';
 import Messenger from './src/screens/Messenger';
 import ProductUpload from './src/screens/ProductUpload';
 import Settings from './src/screens/Settings';
@@ -49,7 +49,7 @@ function DrawerNavigator() {
       }}
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
-      <Drawer.Screen name="ProductListPage" component={ProductListPage} options={{title:'', drawerLabel: 'Products',}} />
+      <Drawer.Screen name="RestaurantListPage" component={RestaurantListPage} options={{title:'', drawerLabel: 'Restaurants',}} />
       <Drawer.Screen name="ProductUpload" component={ProductUpload}  options={{title:'',drawerLabel: 'Product Upload',}}/>
       <Drawer.Screen name="Map" component={Settings}  options={{title:'',drawerLabel: 'Map',}}/>
       <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
@@ -78,8 +78,8 @@ function AuthenticatedStack() {
             headerShown: false,
         }}
         />
-      <Stack.Screen name="ProductListPage" component={ProductListPage} options={{title:''}}/>
-      <Stack.Screen name="ProductPage" component={ProductPage} options={{title:''}}/>
+      <Stack.Screen name="RestaurantListPage" component={RestaurantListPage} options={{title:''}}/>
+      <Stack.Screen name="RestaurantPage" component={RestaurantPage} options={{title:''}}/>
     </Stack.Navigator>
   );
 }
