@@ -8,7 +8,7 @@
       "password": "password",
       "location": {
         "latitude": 38.890231,       
-        "longtitude": -77.075280
+        "longitude": -77.075280
       },
       "address": {
         "city": "Arlington",
@@ -25,7 +25,7 @@
       "password": "password2",
       "location": {
         "latitude": 37.526337,
-        "longtitude": -77.427072
+        "longitude": -77.427072
       },
       "address": {
         "city": "Richmond",
@@ -42,7 +42,7 @@
       "password": "password3",
       "location": {
         "latitude": 40.589584,
-        "longtitude": -73.965282
+        "longitude": -73.965282
       },
       "address": {
         "city": "Brooklyn",
@@ -59,7 +59,7 @@
       "password": "password4",
       "location": {
         "latitude": 40.688938,
-        "longtitude": -74.313619
+        "longitude": -74.313619
       },
       "address": {
         "city": "Springfield",
@@ -76,7 +76,7 @@
       "password": "password5",
       "location": {
         "latitude": 38.875885,
-        "longtitude": -77.471241
+        "longitude": -77.471241
       },
       "address": {
         "city": "Centreville",
@@ -93,7 +93,7 @@
       "password": "password6",
       "location": {
         "latitude": 37.144807,
-        "longtitude": -77.207396
+        "longitude": -77.207396
       },
       "address": {
         "city": "Petersburg",
@@ -110,7 +110,7 @@
       "password": "password7",
       "location": {
         "latitude": 33.793932,
-        "longtitude": -84.342977
+        "longitude": -84.342977
       },
       "address": {
         "city": "Monroe",
@@ -127,7 +127,7 @@
       "password": "password8",
       "location": {
         "latitude": 33.952301,
-        "longtitude": -84.549049
+        "longitude": -84.549049
       },
       "address": {
         "city": "Marietta",
