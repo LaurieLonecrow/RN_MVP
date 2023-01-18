@@ -7,84 +7,84 @@ function ProductPage({route}) {
   const [productImages, setProductImages] = useState([])
 
   const selectedProduct = route.params.product;
-
+console.log(selectedProduct)
   function presshandler() {
     console.log('pressed');
   }
   
-  function renderImageItems(itemData) {
-    return (
-      <View style={styles.imageContainer}>
-        <Image style={styles.image} source={{uri:itemData.item}} />
-      </View>
-      )
-  }
-
-  function getProductImages() {
-      setProductImages(selectedProduct.images)
-  } 
-    
-  useEffect(()=>{
-    getProductImages();
-  })
-
-  return (<>
-  
+  return (
     <View style={globalStyles.container}>
-      <FlatList 
-      horizontal={true}
-      data={productImages}
-      renderItem={renderImageItems}
-      />
       <ScrollView>
-        <View style={styles.container}>
-          <Text style={styles.title}>{selectedProduct.title}</Text>
-          <Text style={styles.subTitle}>{selectedProduct.description}</Text>
-          <Text style={styles.price}>${selectedProduct.price}.00</Text>
+        <View style={styles.header}>
         </View>
-        <Button onPress={presshandler} text={'Add to Favorites'} backgroundColor={'blue'} color={'white'}/>
-        <Button onPress={presshandler} text={'Purchase'} backgroundColor={'lightblue'} color={'black'}/>
+        <View style={styles.imageContainer}>
+          <Image source={{uri:selectedProduct.image}} style={styles.image} />
+          <Text style={styles.name}>{selectedProduct.firstName} {selectedProduct.lastName}</Text>
+          <Text style={styles.location}>{selectedProduct.address.city}, {selectedProduct.address.state} USA</Text>
+        </View>
+        <View style={styles.button}>
+          <Image source={require('../../assets/portfolio.png')} style={styles.icon} />
+          <Text>{selectedProduct.role}</Text>
+        </View>
+        <View style={styles.button}>
+          <Image source={require('../../assets/email.png')} style={styles.icon} />
+          <Text>Message</Text>
+        </View>
       </ScrollView>
     </View>
-    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 20,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  image: {
-    width: 250,
-    height: 250,
-  },
-  imageContainer:{
+  header:{ 
     flex: 1,
-    marginLeft: 15,
-    justifyContent: 'center',
+    backgroundColor: 'black',
+    width: 400, 
+    height: 140,
   },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 24,
-    margin: 8,
-    textAlign: 'center',
-    color: 'black',
+  image: { 
+    width: 140, 
+    height: 140, 
+    borderRadius: 100, 
+    marginTop: -70
   },
-  subTitle: {
-    fontSize: 14,
-    margin: 8,
-    textAlign: 'left',
-    color: 'black',
+  imageContainer: {
+    alignItems: 'center', 
+    marginBottom:20
   },
-  price: {
-    fontWeight: 'bold',
-    fontSize: 24,
-    margin: 8,
-    textAlign: 'center',
-    color: 'black',
+  name: { 
+    fontSize:25, 
+    fibtWeight:'bold', 
+    padding:10
+  },
+  location: { 
+    fontSize:15, 
+    fibtWeight:'bold', 
+    color:'grey'
+  },
+  button: { 
+    alignSelf:'center', 
+    flexDirection: 'row', 
+    justifyContent: 'center', 
+    alignItems:'center', 
+    backgroundColor: '#fff', 
+    width: '90%', 
+    padding:20, 
+    paddingBottom: 22, 
+    borderRadius: 10, 
+    shadowOpacity:80, 
+    elevation:15, 
+    marginTop:20
+  },
+  icon: {
+    width:20, 
+    height:20, 
+    marginRight:15
   },
 });
 

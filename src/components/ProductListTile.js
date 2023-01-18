@@ -13,7 +13,7 @@ function ProductListTile({source, firstName, lastName, address, role, onPress}) 
     >
         <Image style={styles.image} source={source} />
           <View style={styles.textContainer}>
-            <Text style={styles.title}>{firstName}{lastName}</Text>
+            <Text style={styles.title}>{firstName} {lastName}</Text>
             <Text>{address}</Text>
             <Text>{role}</Text>
           </View>

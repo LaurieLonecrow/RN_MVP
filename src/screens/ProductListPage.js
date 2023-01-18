@@ -29,7 +29,7 @@ function ProductListPage({navigation}) {
       source={{uri:itemData.item.image}}
       firstName={itemData.item.firstName}
       lastName={itemData.item.lastName}
-      address={`${itemData.item.address.city},${itemData.item.address.state}`}
+      address={`${itemData.item.address.city}, ${itemData.item.address.state}`}
       role={itemData.item.role}
       onPress={pressHandler}
       />
@@ -42,7 +42,7 @@ function ProductListPage({navigation}) {
   
   return (
     <View style={globalStyles.container}>
-      {loading && <LoadingOverlay message="Loading your products..." /> }
+      {loading && <LoadingOverlay message="Loading your people..." /> }
       {productsData && ( 
         <FlatList 
         data={productsData}
