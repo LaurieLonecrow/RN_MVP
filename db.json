@@ -3,12 +3,18 @@
     {
       "id": 1,
       "email": "test@test.com",
-      "password": "password"
+      "password": "password",
+      "location": "",
+      "image": "url",
+      "position": "Developer"
     },
     {
       "id": 2,
       "email": "test1@test.com",
-      "password": "password1"
+      "password": "password1",
+      "location": "",
+      "image": "url",
+      "position": "Manager"
     }
   ]
 }
