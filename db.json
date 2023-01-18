@@ -11,10 +11,10 @@
         "longtitude": -77.075280
       },
       "address": {
-        "city": "",
-        "state": ""
+        "city": "Arlington",
+        "state": "VA"
       },
-      "image": "http://placeimg.com/640/481/people",
+      "image": "https://randomuser.me/api/portraits/women/1.jpg",
       "role": "Developer"
     },
     {
@@ -28,10 +28,10 @@
         "longtitude": -77.427072
       },
       "address": {
-        "city": "",
-        "state": ""
+        "city": "Richmond",
+        "state": "VA"
       },
-      "image": "http://placeimg.com/640/482/people",
+      "image": "https://randomuser.me/api/portraits/men/2.jpg",
       "role": "Manager"
     },
     {
@@ -41,14 +41,14 @@
       "email": "test3@test.com",
       "password": "password3",
       "location": {
-        "latitude": 40.546418,
-        "longtitude": 73.974895
+        "latitude": 40.589584,
+        "longtitude": -73.965282
       },
       "address": {
-        "city": "",
-        "state": ""
+        "city": "Brooklyn",
+        "state": "NY"
       },
-      "image": "http://placeimg.com/640/483/people",
+      "image": "https://randomuser.me/api/portraits/women/3.jpg",
       "role": "Developer"
     },
     {
@@ -62,10 +62,10 @@
         "longtitude": -74.313619
       },
       "address": {
-        "city": "",
-        "state": ""
+        "city": "Springfield",
+        "state": "NJ"
       },
-      "image": "http://placeimg.com/640/484/people",
+      "image": "https://randomuser.me/api/portraits/men/4.jpg",
       "role": "Manager"
     },
     {
@@ -79,10 +79,10 @@
         "longtitude": -77.471241
       },
       "address": {
-        "city": "",
-        "state": ""
+        "city": "Centreville",
+        "state": "VA"
       },
-      "image": "http://placeimg.com/640/485/people",
+      "image": "https://randomuser.me/api/portraits/women/5.jpg",
       "role": "Developer"
     },
     {
@@ -96,10 +96,10 @@
         "longtitude": -77.207396
       },
       "address": {
-        "city": "",
-        "state": ""
+        "city": "Petersburg",
+        "state": "VA"
       },
-      "image": "http://placeimg.com/640/486/people",
+      "image": "https://randomuser.me/api/portraits/men/6.jpg",
       "role": "Manager"
     },
     {
@@ -113,10 +113,10 @@
         "longtitude": -84.342977
       },
       "address": {
-        "city": "",
-        "state": ""
+        "city": "Monroe",
+        "state": "GA"
       },
-      "image": "http://placeimg.com/640/487/people",
+      "image": "https://randomuser.me/api/portraits/women/7.jpg",
       "role": "Developer"
     },
     {
@@ -130,10 +130,10 @@
         "longtitude": -84.549049
       },
       "address": {
-        "city": "",
-        "state": ""
+        "city": "Marietta",
+        "state": "GA"
       },
-      "image": "http://placeimg.com/640/488/people",
+      "image": "https://randomuser.me/api/portraits/men/8.jpg",
       "role": "Manager"
     }
   ]
