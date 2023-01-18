@@ -2,19 +2,139 @@
   "users": [
     {
       "id": 1,
+      "firstName": "Evie",
+      "lastName": "Douglas",
       "email": "test@test.com",
       "password": "password",
-      "location": "",
-      "image": "url",
-      "position": "Developer"
+      "location": {
+        "latitude": 38.890231,       
+        "longtitude": -77.075280
+      },
+      "address": {
+        "city": "",
+        "state": ""
+      },
+      "image": "http://placeimg.com/640/481/people",
+      "role": "Developer"
     },
     {
       "id": 2,
-      "email": "test1@test.com",
-      "password": "password1",
-      "location": "",
-      "image": "url",
-      "position": "Manager"
+      "firstName": "Ezequiel",
+      "lastName": "Daniel",
+      "email": "test2@test.com",
+      "password": "password2",
+      "location": {
+        "latitude": 37.526337,
+        "longtitude": -77.427072
+      },
+      "address": {
+        "city": "",
+        "state": ""
+      },
+      "image": "http://placeimg.com/640/482/people",
+      "role": "Manager"
+    },
+    {
+      "id": 3,
+      "firstName": "Frida",
+      "lastName": "Kling",
+      "email": "test3@test.com",
+      "password": "password3",
+      "location": {
+        "latitude": 40.546418,
+        "longtitude": 73.974895
+      },
+      "address": {
+        "city": "",
+        "state": ""
+      },
+      "image": "http://placeimg.com/640/483/people",
+      "role": "Developer"
+    },
+    {
+      "id": 4,
+      "firstName": "Oliver",
+      "lastName": "Zboncak",
+      "email": "test4@test.com",
+      "password": "password4",
+      "location": {
+        "latitude": 40.688938,
+        "longtitude": -74.313619
+      },
+      "address": {
+        "city": "",
+        "state": ""
+      },
+      "image": "http://placeimg.com/640/484/people",
+      "role": "Manager"
+    },
+    {
+      "id": 5,
+      "firstName": "Jordane",
+      "lastName": "Deckow",
+      "email": "test5@test.com",
+      "password": "password5",
+      "location": {
+        "latitude": 38.875885,
+        "longtitude": -77.471241
+      },
+      "address": {
+        "city": "",
+        "state": ""
+      },
+      "image": "http://placeimg.com/640/485/people",
+      "role": "Developer"
+    },
+    {
+      "id": 6,
+      "firstName": "Kristoffer",
+      "lastName": "Corwin",
+      "email": "test6@test.com",
+      "password": "password6",
+      "location": {
+        "latitude": 37.144807,
+        "longtitude": -77.207396
+      },
+      "address": {
+        "city": "",
+        "state": ""
+      },
+      "image": "http://placeimg.com/640/486/people",
+      "role": "Manager"
+    },
+    {
+      "id": 7,
+      "firstName": "Hettie",
+      "lastName": "Frami",
+      "email": "test7@test.com",
+      "password": "password7",
+      "location": {
+        "latitude": 33.793932,
+        "longtitude": -84.342977
+      },
+      "address": {
+        "city": "",
+        "state": ""
+      },
+      "image": "http://placeimg.com/640/487/people",
+      "role": "Developer"
+    },
+    {
+      "id": 8,
+      "firstName": "Howell",
+      "lastName": "Windler",
+      "email": "test8@test.com",
+      "password": "password8",
+      "location": {
+        "latitude": 33.952301,
+        "longtitude": -84.549049
+      },
+      "address": {
+        "city": "",
+        "state": ""
+      },
+      "image": "http://placeimg.com/640/488/people",
+      "role": "Manager"
     }
   ]
 }
