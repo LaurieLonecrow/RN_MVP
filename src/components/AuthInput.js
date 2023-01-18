@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
   input: {
     paddingVertical: 8,
     paddingHorizontal: 6,
-    backgroundColor: globalStyles.colors.primary100,
-    borderRadius: 4,
+    backgroundColor: 'white',
+    borderRadius: 10, 
     fontSize: 16,
   },
   inputInvalid: {

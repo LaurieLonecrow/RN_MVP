@@ -84,8 +84,8 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
         )}
         <View style={styles.buttons}>
         {isLogin ?
-          <Button onPress={submitHandler} color='white' text='Log In'/> 
-          : <Button onPress={submitHandler} color='white' text='Sign Up'/> }
+          <Button onPress={submitHandler} color='black' text='Log In'/> 
+          : <Button onPress={submitHandler} color='black' text='Sign Up'/> }
         </View>
       </View>
     </View>
@@ -96,9 +96,8 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
 const styles = StyleSheet.create({
   buttons: {
     marginTop: 12,
-    backgroundColor: globalStyles.colors.primary100,
-    borderRadius: 8,
-
+    backgroundColor: 'lightgrey',
+    borderRadius: 10,
   },
 });
 

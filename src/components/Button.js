@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     padding: 8,
   }, 
   pressed: {
-    opacity: 0.7,
+    opacity: 0.2,
   },
 });
 

@@ -74,8 +74,8 @@ const [cameraPermissionInformation, requestPermission] =
   return (
     <View>
       <View style={styles.imagePreview}>{imagePreview}</View>
-        <Button text="Take a Picture" onPress={getCameraImage} backgroundColor={globalStyles.colors.primary500} color={'white'}/>
-        <Button text="Choose from Camera Roll" onPress={getRollImage} backgroundColor={globalStyles.colors.primary800} color={'white'}/>
+        <Button text="Take a Picture" onPress={getCameraImage} backgroundColor={'grey'} color={'black'}/>
+        <Button text="Choose from Camera Roll" onPress={getRollImage} backgroundColor={'black'} color={'white'}/>
     </View>
   );
 }

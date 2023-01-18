@@ -61,8 +61,8 @@ function AuthContent({ isLogin, onAuthenticate }) {
       />
       <View style={styles.buttons}>
       {isLogin ?
-        <Button onPress={switchAuthModeHandler} color='white' text='Create a new user'/>
-        : <Button onPress={switchAuthModeHandler} color='white'text='Log in instead'/>}
+        <Button onPress={switchAuthModeHandler} color='black' text='Create a new user'/>
+        : <Button onPress={switchAuthModeHandler} color='black'text='Log in instead'/>}
       </View>
     </View>
   );
@@ -76,16 +76,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 32,
     padding: 16,
     borderRadius: 8,
-    backgroundColor: globalStyles.colors.primary800,
-    elevation: 2,
+    backgroundColor: 'grey',
     shadowColor: 'black',
+    shadowOpacity: 80, 
+    elevation: 15,
     shadowOffset: { width: 1, height: 1 },
-    shadowOpacity: 0.35,
-    shadowRadius: 4,
   },
   buttons: {
-    marginTop: 8,
-    backgroundColor: globalStyles.colors.primary400,
-    borderRadius: 8,
+    marginTop: 12,
+    backgroundColor: 'lightgrey',
+    borderRadius: 10,
   },
 });

@@ -17,7 +17,7 @@ function Messenger() {
                 style={styles.textInput}
                 autoCapitalize="none"
                 />
-                <Button text={'SEND'} color="white" onPress={()=>console.log('send')} backgroundColor={globalStyles.colors.primary100}/>
+                <Button text={'SEND'} color="white" onPress={()=>console.log('send')} backgroundColor={'grey'}/>
               </View>
             </TouchableWithoutFeedback> 
         </KeyboardAvoidingView>
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   textInput: {
     borderWidth: 2,
     backgroundColor: 'white',
-    borderColor: globalStyles.colors.primary100,
+    borderColor: 'grey',
     borderRadius: 24,
     fontSize: 16,
     paddingHorizontal: 8,

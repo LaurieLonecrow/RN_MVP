@@ -16,7 +16,15 @@ function Map() {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       };
-      locationPreview = <MapView style={styles.map} initialRegion={region}></MapView>;
+      locationPreview = <MapView style={styles.map} initialRegion={region}>
+        <Marker
+          title="Picked Location"
+          coordinate={{
+            latitude: location.lat, 
+            longitude: location.lng,
+          }}
+        />
+      </MapView>;
     }
     
   return (
