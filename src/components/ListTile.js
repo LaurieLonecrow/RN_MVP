@@ -1,8 +1,9 @@
-import { StyleSheet, View, Text, Image, Pressable } from "react-native"
+import { StyleSheet, View, Text, Image, Pressable, ImageBackground } from "react-native"
+import { getStarRating, getDollarSigns } from '../util/helpers/getRatings';
 
-function ListTile({source, title, categories, distance, onPress}) {
-  function convertMetersToMiles(meters) {
-    return (meters*0.00062137).toFixed(2);
+function ListTile({source, title, categories, distance, stars, dollars, onPress}) {
+  function convertMetersToWalkingDistance(meters) {
+    return ((meters*0.00062137)*25).toFixed(0);
   }
   return (
     <Pressable
@@ -13,13 +14,16 @@ function ListTile({source, title, categories, distance, onPress}) {
     ]}
     onPress={onPress}
     >
-      <Image style={styles.image} source={source} />
+      <ImageBackground style={styles.image} source={source}>
+      </ImageBackground>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
           <View style={styles.categoriesContainer}>
           {categories.map(cat => <Text style={styles.categories}>{cat} </Text>)}
           </View>
-        <Text style={styles.distance}>{convertMetersToMiles(distance)} miles away</Text>
+        <Text style={styles.distance}>{convertMetersToWalkingDistance(distance)} minute walk</Text>
+        <View style={styles.starsContainer}>{getStarRating(stars)}</View>
+        <View style={styles.priceContainer}>{getDollarSigns(dollars)}</View>          
       </View>
     </Pressable>
   )
@@ -30,7 +34,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     margin: 4,
-    height: 150,
+    height: 160,
     borderRadius: 8,
     elevation: 4,
     backgroundColor: 'white',
@@ -39,17 +43,16 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
     overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
-
   },
   image: {
-    flex: 1,
+    flex: .8,
     width: '100%',
     height: '100%',
+    position: 'relative'
   },
   textContainer: {
     flex: 1,
-    justifyContent: 'start',
-    paddingTop: 20,
+    paddingTop: 10,
     paddingLeft: 20,
   },
   title: {
@@ -59,6 +62,7 @@ const styles = StyleSheet.create({
   categoriesContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    paddingTop: 5,
   },
   categories: {
     fontWeight: '200',
@@ -67,6 +71,19 @@ const styles = StyleSheet.create({
   distance: {
     fontWeight: '500',
     fontSize: 14,
+    paddingTop: 5,
+  },
+  starsContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    paddingTop: 5,
+  },
+  priceContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 15,
+    right: 15,
   },
   pressed: {
     opacity: 0.7,

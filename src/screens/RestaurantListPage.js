@@ -25,7 +25,7 @@ function ListPage({navigation}) {
   function renderRestaurantData(itemData) {
     function pressHandler() {
       navigation.navigate('RestaurantPage', {
-        product: itemData.item,
+        restaurant: itemData.item,
       })
     }
     function getCategories(categories){
@@ -45,6 +45,8 @@ function ListPage({navigation}) {
       title={itemData.item.name}
       categories={getCategories(itemData.item.categories)}
       distance={itemData.item.distance}
+      stars={itemData.item.rating}
+      dollars={itemData.item.price}
       onPress={pressHandler}
       />
     )
