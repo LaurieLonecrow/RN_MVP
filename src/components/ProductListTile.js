@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, Image, Pressable } from "react-native"
 
-function ProductListTile({source, title, price, onPress}) {
+function ProductListTile({source, firstName, lastName, address, role, onPress}) {
 
   return (
     <Pressable
@@ -13,8 +13,9 @@ function ProductListTile({source, title, price, onPress}) {
     >
         <Image style={styles.image} source={source} />
           <View style={styles.textContainer}>
-            <Text style={styles.title}>{title}</Text>
-            <Text>${price}.00</Text>
+            <Text style={styles.title}>{firstName}{lastName}</Text>
+            <Text>{address}</Text>
+            <Text>{role}</Text>
           </View>
     </Pressable>
   )

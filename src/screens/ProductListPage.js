@@ -4,14 +4,15 @@ import { globalStyles } from '../constants/GlobalStyles';
 import ProductListTile from '../components/ProductListTile';
 import LoadingOverlay from "../components/LoadingOverlay";
 
-import getProducts from "../api/productsApi";
+import { getProducts } from "../api/productsApi";
+import { getUsers } from "../api/productsApi";
 
 function ProductListPage({navigation}) {
   const [loading, setLoading] = useState(true);
   const [productsData, setProductsData] = useState([])
 
   const fetchProductsData = async () => {
-    const data = await getProducts();
+    const data = await getUsers();
     setProductsData(data);
     setLoading(false);
   };
@@ -25,9 +26,11 @@ function ProductListPage({navigation}) {
     }
     return (
       <ProductListTile 
-      source={{uri:itemData.item.images[1]}}
-      title={itemData.item.title}
-      price={itemData.item.price}
+      source={{uri:itemData.item.image}}
+      firstName={itemData.item.firstName}
+      lastName={itemData.item.lastName}
+      address={`${itemData.item.address.city},${itemData.item.address.state}`}
+      role={itemData.item.role}
       onPress={pressHandler}
       />
     )
