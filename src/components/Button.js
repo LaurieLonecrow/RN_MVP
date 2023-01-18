@@ -9,7 +9,7 @@ function Button({onPress, text, backgroundColor, icon, color}) {
       style={({ pressed }) => pressed && styles.pressed}
       onPress={onPress}>
       <View style={[styles.button, {backgroundColor: backgroundColor}]}>
-        <Ionicons name={icon} size={24} color='white' />
+        <Ionicons name={icon} size={24} color='black' />
         <Text style={[styles.buttonText, {color: color}]}>{text}</Text>
       </View>
     </Pressable>

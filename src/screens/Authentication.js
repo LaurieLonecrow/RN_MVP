@@ -10,10 +10,10 @@ function Authentication({navigation}) {
       <Text style={styles.header}>Start your journey</Text>
       <Text style={styles.subHeader}>Create your new Account to subscribe to news, fresh realeases, and more...</Text>
         <View style={styles.buttonContainer}>
-        <SignInButton text='Sign in with Apple' onPress={()=>console.log('Pressed Apple')} backgroundColor={globalStyles.colors.primary400} icon="ios-lock-closed-outline" color='white'/>
-        <SignInButton text='Sign in with Facebook' onPress={()=>console.log('Pressed Facebook')} backgroundColor={globalStyles.colors.primary500} icon="logo-facebook" color='white'/>
-        <SignInButton text='Sign in with Twitter' onPress={()=>console.log('Pressed Twitter')} backgroundColor={globalStyles.colors.primary200} icon="logo-twitter" color='white'/>
-        <SignInButton text='Sign in or register with Email' onPress={()=>navigation.navigate('Login')} color={globalStyles.colors.primary500}/>
+        <SignInButton text='Sign in with Apple' onPress={()=>console.log('Pressed Apple')} backgroundColor={'lightgrey'} icon="ios-lock-closed-outline" color='black'/>
+        <SignInButton text='Sign in with Facebook' onPress={()=>console.log('Pressed Facebook')} backgroundColor={'lightgrey'} icon="logo-facebook" color='black'/>
+        <SignInButton text='Sign in with Twitter' onPress={()=>console.log('Pressed Twitter')} backgroundColor={'lightgrey'} icon="logo-twitter" color='black'/>
+        <SignInButton text='Sign in or register with Email' onPress={()=>navigation.navigate('Login')} color={'black'}/>
         </View>
     </View>
     </View>
