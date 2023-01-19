@@ -1,31 +1,31 @@
 import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
-import ProductListTile from '../components/ProductListTile';
+import ProfileListTile from '../components/ProfileListTile';
 import LoadingOverlay from "../components/LoadingOverlay";
 
-import { getProducts } from "../api/productsApi";
+import { getProfiles } from "../api/productsApi";
 import { getUsers } from "../api/productsApi";
 
-function ProductListPage({navigation}) {
+function ProfileListPage({navigation}) {
   const [loading, setLoading] = useState(true);
-  const [productsData, setProductsData] = useState([])
+  const [productsData, setProfilesData] = useState([])
 
-  const fetchProductsData = async () => {
+  const fetchProfilesData = async () => {
     const data = await getUsers();
-    setProductsData(data);
+    setProfilesData(data);
     setLoading(false);
   };
 
   
-  function renderProductData(itemData) {
+  function renderProfileData(itemData) {
     function pressHandler() {
-      navigation.navigate('ProductPage', {
+      navigation.navigate('ProfilePage', {
         product: itemData.item,
       })
     }
     return (
-      <ProductListTile 
+      <ProfileListTile 
       source={{uri:itemData.item.image}}
       firstName={itemData.item.firstName}
       lastName={itemData.item.lastName}
@@ -37,7 +37,7 @@ function ProductListPage({navigation}) {
   };
 
   useEffect(() => {
-    fetchProductsData();
+    fetchProfilesData();
   }, []);
   
   return (
@@ -46,7 +46,7 @@ function ProductListPage({navigation}) {
       {productsData && ( 
         <FlatList 
         data={productsData}
-        renderItem={renderProductData}
+        renderItem={renderProfileData}
         keyExtractor={(item)=>item.id}
         numColumns={2}
         />
@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductListPage;
+export default ProfileListPage;

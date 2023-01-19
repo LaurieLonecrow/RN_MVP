@@ -1,12 +1,12 @@
 import { StyleSheet, View, Text, Image, Pressable } from "react-native"
 
-function ProductListTile({source, firstName, lastName, address, role, onPress}) {
+function ProfileListTile({source, firstName, lastName, address, role, onPress}) {
 
   return (
     <Pressable
     android_ripple={{ color: '#ccc' }}
     style={({ pressed }) => [
-      styles.productItem,
+      styles.profileItem,
       pressed ? styles.buttonPressed : null,
     ]}
     onPress={onPress}
@@ -22,7 +22,7 @@ function ProductListTile({source, firstName, lastName, address, role, onPress}) 
 };
 
 const styles = StyleSheet.create({
-  productItem: {
+  profileItem: {
     flex: 1,
     margin: 4,
     padding: 16,
@@ -58,4 +58,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductListTile;
+export default ProfileListTile;

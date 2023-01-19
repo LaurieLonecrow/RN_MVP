@@ -3,7 +3,7 @@ import { StyleSheet, View, Image, Text } from 'react-native';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { globalStyles } from '../constants/GlobalStyles';
 
-function ProductUpload() {
+function MyProfile() {
   return (
     <View style={globalStyles.container}>
       <ScrollView>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductUpload;
+export default MyProfile;

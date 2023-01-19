@@ -13,10 +13,10 @@ import Button from './src/components/Button';
 
 import Landing from './src/screens/Landing';
 import Authentication from './src/screens/Authentication'
-import ProductListPage from './src/screens/ProductListPage';
-import ProductPage from './src/screens/ProductPage';
+import ProfileListPage from './src/screens/ProfileListPage';
+import ProfilePage from './src/screens/ProfilePage';
 import Messenger from './src/screens/Messenger';
-import ProductUpload from './src/screens/ProductUpload';
+import MyProfile from './src/screens/MyProfile';
 import Settings from './src/screens/Settings';
 import Splash from './src/screens/Splash';
 import Login from './src/screens/Login';
@@ -49,8 +49,8 @@ function DrawerNavigator() {
       }}
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
-      <Drawer.Screen name="ProductListPage" component={ProductListPage} options={{title:'', drawerLabel: 'Products',}} />
-      <Drawer.Screen name="ProductUpload" component={ProductUpload}  options={{title:'',drawerLabel: 'Product Upload',}}/>
+      <Drawer.Screen name="ProfileListPage" component={ProfileListPage} options={{title:'', drawerLabel: 'Profiles',}} />
+      <Drawer.Screen name="MyProfile" component={MyProfile}  options={{title:'',drawerLabel: 'Profile',}}/>
       <Drawer.Screen name="Map" component={Settings}  options={{title:'',drawerLabel: 'Map',}}/>
       <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
       <Drawer.Screen name="Landing" component={Landing} options={{title:'', drawerLabel: 'Camera',}} />
@@ -78,8 +78,8 @@ function AuthenticatedStack() {
             headerShown: false,
         }}
         />
-      <Stack.Screen name="ProductListPage" component={ProductListPage} options={{title:''}}/>
-      <Stack.Screen name="ProductPage" component={ProductPage} options={{title:''}}/>
+      <Stack.Screen name="ProfileListPage" component={ProfileListPage} options={{title:''}}/>
+      <Stack.Screen name="ProfilePage" component={ProfilePage} options={{title:''}}/>
     </Stack.Navigator>
   );
 }

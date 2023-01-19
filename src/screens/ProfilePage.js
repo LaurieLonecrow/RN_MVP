@@ -3,11 +3,11 @@ import { StyleSheet, Text, View, Image, ScrollView, FlatList } from 'react-nativ
 import { globalStyles } from '../constants/GlobalStyles';
 import Button from '../components/Button';
 
-function ProductPage({route}) {
-  const [productImages, setProductImages] = useState([])
+function ProfilePage({route}) {
+  const [profileImages, setProfileImages] = useState([])
 
-  const selectedProduct = route.params.product;
-console.log(selectedProduct)
+  const selectedProfile = route.params.product;
+console.log(selectedProfile)
   function presshandler() {
     console.log('pressed');
   }
@@ -18,13 +18,13 @@ console.log(selectedProduct)
         <View style={styles.header}>
         </View>
         <View style={styles.imageContainer}>
-          <Image source={{uri:selectedProduct.image}} style={styles.image} />
-          <Text style={styles.name}>{selectedProduct.firstName} {selectedProduct.lastName}</Text>
-          <Text style={styles.location}>{selectedProduct.address.city}, {selectedProduct.address.state} USA</Text>
+          <Image source={{uri:selectedProfile.image}} style={styles.image} />
+          <Text style={styles.name}>{selectedProfile.firstName} {selectedProfile.lastName}</Text>
+          <Text style={styles.location}>{selectedProfile.address.city}, {selectedProfile.address.state} USA</Text>
         </View>
         <View style={styles.button}>
           <Image source={require('../../assets/portfolio.png')} style={styles.icon} />
-          <Text>{selectedProduct.role}</Text>
+          <Text>{selectedProfile.role}</Text>
         </View>
         <View style={styles.button}>
           <Image source={require('../../assets/email.png')} style={styles.icon} />
@@ -89,6 +89,6 @@ const styles = StyleSheet.create({
 });
 
 
-export default ProductPage;
+export default ProfilePage;
 
 
