@@ -11,6 +11,7 @@ export async function login(email, password) {
   })
 })
 .then(res => res.json())
+.catch(error => console.log('error', error))
 .then(data => {
   return data});
 
