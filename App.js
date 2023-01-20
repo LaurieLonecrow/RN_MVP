@@ -51,7 +51,6 @@ function DrawerNavigator() {
     >
       <Drawer.Screen name="ProfileListPage" component={ProfileListPage} options={{title:'', drawerLabel: 'Profiles',}} />
       <Drawer.Screen name="MyProfile" component={MyProfile}  options={{title:'',drawerLabel: 'Profile',}}/>
-      <Drawer.Screen name="Map" component={Settings}  options={{title:'',drawerLabel: 'Map',}}/>
       <Drawer.Screen name="Messenger" component={Messenger}  options={{title:'',drawerLabel: 'Messenger',}}/>
       <Drawer.Screen name="Landing" component={Landing} options={{title:'', drawerLabel: 'Camera',}} />
     </Drawer.Navigator>
