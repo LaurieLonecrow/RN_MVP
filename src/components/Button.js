@@ -14,7 +14,6 @@ function Button({onPress, text, backgroundColor, icon, color}) {
       </View>
     </Pressable>
     </View>
-
   )
 };
 

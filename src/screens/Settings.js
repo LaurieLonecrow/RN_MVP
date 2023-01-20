@@ -5,7 +5,6 @@ import Map from '../components/Map';
 function Settings() {
   return (
     <View style={globalStyles.container}>
-        <Map/>
     </View>
   );
 }

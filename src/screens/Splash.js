@@ -1,11 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { globalStyles } from '../constants/GlobalStyles';
-import GlobalColorOptions from '../components/GlobalColorOptions'
 
 function Splash() {
   return (
     <View style={globalStyles.container}>
-      <GlobalColorOptions/>
     </View>
   );
 }
