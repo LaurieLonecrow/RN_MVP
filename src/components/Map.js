@@ -5,16 +5,20 @@ import MapView, { Marker } from 'react-native-maps';
 import LoadingOverlay from './LoadingOverlay';
 import { getCurrentLocation } from '../util/helpers/getLocation';
 
-import { getUsers } from '../api/productsApi';
+import { getUsers } from '../api/profilesApi';
 
 
-function Map() {
+function Map({users}) {
   const [ userlocations, setUserLocations ] = useState();
   const { location } = getCurrentLocation();
 
   async function getUserLocations() {
-    const userlocations = await getUsers();
-    const locationsArray = userlocations.map(each => ({"name": `${each.firstName} ${each.lastName}`, "location": each.location, "id": each.id}));
+    const userlocations = await users;
+    const locationsArray = userlocations.map(each => ({
+      "name": `${each.firstName} ${each.lastName}`, 
+      "location": each.location, 
+      "id": each.id
+    }));
     setUserLocations(locationsArray);
   }
 
@@ -27,7 +31,7 @@ function Map() {
       const region = {
         latitude: location.lat, 
         longitude: location.lng,
-        latitudeDelta: 12,
+        latitudeDelta: 14,
         longitudeDelta: 1,
       };
     locationPreview = 
